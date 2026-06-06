@@ -1,0 +1,88 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--bg-deep);
+  border-right: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.logo {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logoBox {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--neon-pink), var(--magenta));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px rgba(255, 79, 216, 0.3);
+  flex-shrink: 0;
+}
+
+.logoImg {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.nav {
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.navItem i {
+  width: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.navItem:hover,
+.active {
+  background: rgba(255, 79, 216, 0.1);
+  color: var(--neon-pink);
+}
+
+@media (max-width: 1024px) {
+  .logoText,
+  .navItem span {
+    display: none;
+  }
+}

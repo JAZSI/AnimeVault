@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="src/assets/logo.svg" width="84" alt="AnimeVault logo" />
 
-## Available Scripts
+# AnimeVault
 
-In the project directory, you can run:
+**A neon-glassmorphism anime & manga discovery dashboard, powered by the Jikan (MyAnimeList) API.**
 
-### `npm start`
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Bun](https://img.shields.io/badge/Bun-1.3-000000?style=flat-square&logo=bun&logoColor=white)](https://bun.sh)
+[![Jikan API](https://img.shields.io/badge/API-Jikan%20v4-ff4fd8?style=flat-square)](https://jikan.moe)
+[![License: MIT](https://img.shields.io/badge/License-MIT-e0aaff?style=flat-square)](#-license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[**Live Demo**](https://jazsi.github.io/AnimeVault/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</div>
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📸 Preview
 
-### `npm run build`
+<div align="center">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![AnimeVault preview](preview.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ✨ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 🎬 **Rich dashboard** — top-rated, currently airing, this season, upcoming, and most popular anime, plus top/popular/ongoing manga.
+- 🌀 **Auto-rotating hero** with genres, score, episodes, status, and synopsis for featured titles.
+- 🏆 **Global rankings** sidebar for top anime, manga, and characters.
+- 👥 **Most-favorited characters** grid.
+- 🔎 **Search** that surfaces a full grid of matching anime.
+- 🎲 **Random pick** to discover something new.
+- 🪟 **Details modal** with banner, poster, stats, and synopsis for any title.
+- 📱 **Fully responsive** from ultrawide down to mobile.
+- ⚡ **Rate-limit aware** — a request queue serializes and throttles calls so the Jikan API is never hammered.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠 Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Area        | Choice                                                        |
+| ----------- | ------------------------------------------------------------- |
+| Runtime     | [Bun](https://bun.sh)  |
+| UI          | [React 19](https://react.dev) + TypeScript                    |
+| Styling     | CSS        |
+| Icons       | [Font Awesome](https://fontawesome.com)    |
+| Data        | [Jikan v4](https://jikan.moe) — unofficial MyAnimeList API    |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- [Bun](https://bun.sh) `1.3+`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/JAZSI/AnimeVault.git
+cd AnimeVault
+bun install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Development
 
-### Making a Progressive Web App
+```bash
+bun dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Then open the URL printed in the console (defaults to `http://localhost:3000`).
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📦 Scripts
 
-### Deployment
+| Command            | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| `bun dev`          | Start the local dev server with live re-bundling.        |
+| `bun run build`    | Production build to `dist/` (root-relative assets).      |
+| `bun run build:gh` | Production build for GitHub Pages (base path `/AnimeVault/`). |
+| `bun start`        | Serve a production build.                                |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🗂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+src/
+├─ components/
+│  ├─ layout/    Sidebar · Header · MainLayout
+│  ├─ anime/     HeroSlider · MediaCard · MediaGrid · RankList · CharacterGrid · MediaModal
+│  └─ ui/        Section · Spinner · Skeleton · LoadingScreen · StateMessage · ToastContainer
+├─ pages/        Dashboard · SearchResults
+├─ hooks/        useAsync · useAnimeData · useAnimeSearch · useMediaDetails
+├─ context/      ModalContext · ToastContext · SearchContext
+├─ services/     jikanApi (HTTP + rate-limit queue) · animeService (endpoints + normalization)
+├─ styles/       variables.css · globals.css
+├─ types/        jikan.ts
+├─ assets/       logo.svg
+├─ App.tsx       Provider composition + page switch
+├─ frontend.tsx  React entry point
+└─ index.html    HTML entry point
+```
+
+---
+
+## 🌐 Deployment
+
+Pushing to `main` triggers the [`deploy.yml`](.github/workflows/deploy.yml) workflow, which builds with `build:gh` and publishes `dist/` to GitHub Pages.
+
+> **Note:** the base path is set to `/AnimeVault/` (see `build:gh`). It must match your repository name so assets resolve correctly — update the `--public-path` flag if you rename the repo.
+
+---
+
+## 🙏 Credits
+
+- Data provided by the [Jikan API](https://jikan.moe), an unofficial [MyAnimeList](https://myanimelist.net) API.
+- AnimeVault is a fan-made, non-commercial project and is not affiliated with MyAnimeList.
+
+---
+
+## 📄 License
+
+Released under the [MIT License](LICENSE).

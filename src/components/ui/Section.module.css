@@ -1,0 +1,40 @@
+.section {
+  margin-bottom: 3rem;
+}
+
+.compactSection {
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 79, 216, 0.1);
+}
+
+.compactHeader {
+  border: none;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.compactTitle {
+  font-size: 0.9rem;
+}
+
+.title i {
+  color: var(--neon-pink);
+}

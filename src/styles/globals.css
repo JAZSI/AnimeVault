@@ -1,0 +1,120 @@
+@import "./variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 12% -10%,
+      rgba(215, 109, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 100% 110%,
+      rgba(255, 79, 216, 0.12),
+      transparent 55%
+    ),
+    var(--bg-void);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 79, 216, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 79, 216, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 40%, transparent 100%);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(255, 79, 216, 0.16), transparent 30%),
+    radial-gradient(circle at 78% 62%, rgba(140, 80, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 52% 92%, rgba(255, 105, 229, 0.1), transparent 36%);
+  filter: blur(50px);
+  animation: aurora 26s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2.5%, -3%, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(-2.5%, 2.5%, 0) scale(1.04);
+  }
+}
+
+#root {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

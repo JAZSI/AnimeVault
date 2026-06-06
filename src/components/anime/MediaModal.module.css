@@ -1,0 +1,173 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 2, 8, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: var(--bg-deep);
+  border: 1px solid var(--glass-border-bright);
+  width: 90%;
+  max-width: 850px;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.banner {
+  height: 200px;
+  background: var(--bg-mid);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.bannerFade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-deep), transparent);
+}
+
+.body {
+  padding: 1.5rem 2rem 2rem;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+}
+
+.center {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.errorText {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.poster {
+  width: 180px;
+  border-radius: 10px;
+  border: 2px solid var(--glass-border-bright);
+  display: block;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 1rem;
+}
+
+.statValue {
+  color: var(--neon-pink);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.statLabel {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.synopsisLabel {
+  color: var(--neon-pink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.synopsis {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.retry {
+  background: rgba(255, 79, 216, 0.1);
+  border: 1px solid var(--glass-border);
+  color: var(--neon-pink);
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    width: 95%;
+    height: 88vh;
+  }
+  .banner {
+    height: 140px;
+  }
+  .body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .stats {
+    justify-content: center;
+    gap: 1.25rem;
+  }
+}

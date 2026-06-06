@@ -1,0 +1,27 @@
+:root {
+  --bg-void: #050208;
+  --bg-deep: #0d0616;
+  --bg-mid: #160b24;
+  --bg-surface: #1e0f32;
+  --glass-bg: rgba(13, 6, 22, 0.85);
+  --glass-border: rgba(255, 79, 216, 0.2);
+  --glass-border-bright: rgba(255, 105, 229, 0.45);
+  --neon-pink: #ff4fd8;
+  --hot-pink: #ff69e5;
+  --magenta: #d76dff;
+  --text-primary: #ffffff;
+  --text-secondary: #e0aaff;
+  --text-muted: #6b5c7e;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --sidebar-width: 240px;
+
+  --font-display: "Rajdhani", sans-serif;
+  --font-body: "Exo 2", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 72px;
+  }
+}
