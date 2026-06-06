@@ -26,6 +26,10 @@ jobs:
         with:
           bun-version: latest
 
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - run: bun install --frozen-lockfile
 
       # Builds into ./dist with assets served from /AnimeVault/.
