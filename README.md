@@ -82,10 +82,9 @@ Then open the URL printed in the console (defaults to `http://localhost:3000`).
 
 | Command            | Description                                              |
 | ------------------ | -------------------------------------------------------- |
-| `bun dev`          | Start the local dev server with live re-bundling.        |
-| `bun run build`    | Production build to `dist/` (root-relative assets).      |
-| `bun run build:gh` | Production build for GitHub Pages (base path `/AnimeVault/`). |
-| `bun start`        | Serve a production build.                                |
+| `bun dev`          | Start the Vite dev server with HMR.                      |
+| `bun run build`    | Production build to `dist/` (base path `/AnimeVault/`).  |
+| `bun run preview`  | Serve the production build locally.                     |
 
 ---
 
@@ -113,9 +112,11 @@ src/
 
 ## 🌐 Deployment
 
-Pushing to `main` triggers the [`deploy.yml`](.github/workflows/deploy.yml) workflow, which builds with `build:gh` and publishes `dist/` to GitHub Pages.
+Pushing to `main` triggers the [`deploy.yml`](.github/workflows/deploy.yml) workflow, which runs `bun run build` and publishes `dist/` to GitHub Pages.
 
-> **Note:** the base path is set to `/AnimeVault/` (see `build:gh`). It must match your repository name so assets resolve correctly — update the `--public-path` flag if you rename the repo.
+> **Note:** the base path is set to `/AnimeVault/` in [`vite.config.ts`](vite.config.ts). It must match your repository name so assets resolve correctly — update `base` there if you rename the repo.
+>
+> **GitHub Pages setup:** in **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from a branch"), otherwise Pages serves the README via Jekyll instead of the built app.
 
 ---
 

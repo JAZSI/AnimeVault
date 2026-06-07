@@ -32,8 +32,8 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
-      # Builds into ./dist with assets served from /AnimeVault/.
-      - run: bun run build:gh
+      # Builds into ./dist; vite.config.ts sets base to /AnimeVault/ for builds.
+      - run: bun run build
 
       # SPA fallback so refreshes / unknown paths still load the app.
       - run: cp dist/index.html dist/404.html
